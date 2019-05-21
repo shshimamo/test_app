@@ -2,7 +2,7 @@
 lock "~> 3.11.0"
 
 set :application, "test_app"
-set :repo_url, "git@example.com:shshimamo/test_app.git"
+set :repo_url, "git@github.com:shshimamo/test_app.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -42,6 +42,7 @@ set :log_level, :debug
 
 set :rbenv_type, :system
 set :rbenv_ruby, File.read('.ruby-version').strip
+set :rbenv_path, '~/.rbenv'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 set :rbenv_roles, :all # default value
