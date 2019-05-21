@@ -46,13 +46,6 @@
 #    forward_agent: false,
 #    auth_methods: %w(password)
 #  }
-
-set :ssh_options, {
-  keys: [ENV['SSH_KEY_PATH']],
-  forward_agent: false,
-  auth_methods: [ENV['SSH_PASSWORD']]
-}
-
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
@@ -69,4 +62,9 @@ set :ssh_options, {
 
 server ENV['APP_SERVER_HOST'],
   user: ENV['APP_SERVER_USER'],
-  roles: %w{web app db}
+  roles: %w{web app db},
+  ssh_options: {
+    keys: [ENV['SSH_KEY_PATH']],
+    forward_agent: false,
+    auth_methods: %w(publickey)
+  }
