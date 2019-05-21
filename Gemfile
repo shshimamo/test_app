@@ -40,6 +40,11 @@ group :development, :test do
 
   gem 'better_errors'
   gem 'binding_of_caller'
+
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
 end
 
 group :development do
