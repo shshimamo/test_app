@@ -5,7 +5,7 @@ $worker  = 2
 $timeout = 30
 
 # 自分のアプリケーション名、currentがつくことに注意。
-$app_dir = "/var/www/mumu/current"
+$app_dir = "/var/www/test_app/current"
 
 # リクエストを受け取るポート番号を指定
 $listen  = File.expand_path 'tmp/sockets/.unicorn.sock', $app_dir
